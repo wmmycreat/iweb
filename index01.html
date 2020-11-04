@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<title>i前端在线课堂</title>
+		<style>
+			.topbar{
+			width: 100%;
+			height: 29px;
+			line-height: 29px;
+			background: #f9f9f9;
+			border-bottom: 1px  solid  #eee;
+			text-align: right;
+			
+		}
+		.container{
+			width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+			
+			}
+		.theme-reverse{/*主题色的反色*/
+			color: #f60;
+			}
+		.topbar>.container>a,
+		.topbar>.container>span { /*复杂选择器 , 并列选举多个*/
+			padding-left:1em;
+		    }
+		.searchbar{
+			width: 100%;
+			
+		}
+		.searchbar>.container{
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
+		.search{
+			float:right;
+			margin-top: 6px;
+		}
+		.search>input{
+			width: 430px;
+			height: 32PX;
+			border: 1px solid #ccc;
+			/*输入框的外围轮廓线*/
+			outline:none;
+			padding-left: .8em;/*css中0.8简写为.8*/
+			padding-right: .8em;
+		}
+		.search>.fa-search{
+			background: #57bc4c;
+			color: #fff;
+			font-size: 2em;
+			width: 50px;
+			height: 32px;
+			line-height: 32px;
+			text-align: center;
+			
+			
+			
+		}
+	</style>
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="container">
+				<a href="#">
+					<span class="fa fa-star"></span>
+					收藏i前端
+				</a>
+				<a href="#">
+					<span class="fa fa-mobile-phone fa-lg"></span>
+					<span class="theme-reverse">下载手机客户端</span>
+				</a>
+				<span>
+					<span class="fa fa-envelope"></span>
+					反馈邮箱:iweb@123.con
+				</span>
+				<span>
+					<span class="fa fa-phone  fa-lg"></span>
+					客服热线：4008-200-120
+				</span>
+			</div>
+		</div>
+		<div class="searchbar">
+			<!--搜索条-->
+			<div class="container">
+				<img src="img/logo.png" alt="iweb LOGO">
+				<div class="search">
+					<!--logo-->
+					<input type="text" placeholder="课程搜索"><span class=" fa fa-search fa-lg"></span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
