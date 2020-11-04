@@ -1,0 +1,20 @@
+/*此文件包含所有页面的全局css*/
+*{
+	
+	box-sizing: border-box;/*边框盒子推荐，简化盒子尺寸计算*/
+}
+body{
+	margin: 0;
+	color:#555;
+	background: #fff;
+	font-size: 12px;
+	font-family: "arial";
+	line-height: 1.667em;
+}
+a{
+	color: #555;
+	text-decoration: none;
+}
+a:hover{
+	color: #f60;
+}
