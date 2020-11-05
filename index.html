@@ -51,6 +51,7 @@
 			outline:none;
 			padding-left: .8em;/*css中0.8简写为.8*/
 			padding-right: .8em;
+			/*vertical-align: middle;/*行内块与同一行中的内容竖直对齐，针对兼容性问题*/
 		}
 		.search>.fa-search{
 			background: #57bc4c;
@@ -61,21 +62,51 @@
 			line-height: 32px;
 			text-align: center;
 		}
+		.cart-container{
+			/*修改购物车容器定位方式，为下拉菜单提供参照物且不脱离文档流*/
+			position: relative;
+			float: right;
+			margin-top: 6px;
+			margin-left: 2em;
+		}
+		
 		.cart{
 			width: 140px;
 			height: 33px;
+			line-height: 33px;
 			background-color: #F9F9F9;
 			border: 1px  solid  #ddd;
-			margin-top: 6px;
-			float: right;
-			margin-left: 2em;
-			text-align: center;
+		    cursor:pointer;/*修改光标样式*/
+			border-bottom: none;
+			position: relative;
+			z-index: 1;
+			
 			}
-		.cart>span{
-			color:#57BC4C;
-			height: 32px;
-			line-height: 32px;		
-		}
+			.cart>.fa{
+				padding-left: .6em;
+				padding-right: .6em;
+				color:#57BC4C;
+			}
+		    .cart>.caret{
+			transform: rotate(0);
+			transition: all .3s;	
+		    }
+		    .cart>.caret-rotate{
+			transform:rotate(180deg) ;
+		    }
+			.cart-container>.dropdown{
+				position: absolute;/* 绝对定位可以处于其他元素的下方*/
+				right: 0px;
+				top: 32px;
+				background: #fff;
+				border: 1px solid #ddd;
+				/*简写padding: 2em 3em 2em 3em;*/
+				padding: 2em 3em;/*上和右 简写*/
+			    width: 262px;
+				
+				
+				
+			}
 		.navbar{
 			width: 100%;
 			height: 40px;
@@ -91,6 +122,7 @@
 	</style>
 	</head>
 	<body>
+		<!--顶部条-->
 		<div class="topbar">
 			<div class="container">
 				<a href="#">
@@ -117,10 +149,17 @@
 				<!--logo-->
 				<img src="img/logo.png" alt="iweb LOGO">
 				<!--购物车-->
-				<div class="cart">
-				<span class="fa fa-shopping-cart"></span>
-							我的购物车(0)
-				<span class="fa fa-caret-down"></span>
+				<div class="cart-container"><!--Z-index-->
+				    <div class="cart" id="myCart"><!-- 悬停购物车里面的内容则只有小三角变化，注意触发的范围和反应的范围不一样 -->
+				        <span class="fa fa-shopping-cart"></span>
+				        <span>我的购物车(<b>0</b>)</span>	
+						<!-- 加了两个class .一个是caret，另一个是caret-rotate-->
+				        <span class="fa fa-caret-down caret caret-rotate" id="caret"></span>
+					</div>
+				         <!-- 下拉菜单-->
+				    <div class="dropdown">
+					请登录后查看您的菜单
+				    </div> 
 				</div>
 				<div class="search">
 					<!--搜索-->
@@ -141,8 +180,19 @@
 				<a href="#">核心课程</a>
 				<a href="#">进阶课程</a>
 				<a href="#">名师堂</a>
-				<a href="#">校区123</a>
+				<a href="#">校区</a>
 			</div>
 		</div>
+		
+		<script>
+			//鼠标进入“我的购物车”小三角旋转，离开则转回来//
+		myCart.onmouseenter = () => {
+			caret.classList.add('caret-rotate')
+		}
+		//鼠标离开时删除//
+		myCart.onmouseleave = () => {
+			caret.classList.remove('caret-rotate')
+		}	
+		</script>
 	</body>
 </html>

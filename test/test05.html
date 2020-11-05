@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+	.pic1{/*基础样式*/
+		/*width: 150px;*/
+		transform: scale(1.0);/*缩放，不会影响其他的元素的效果*/
+		transition:all .3s;
+		
+	}
+	.big1{/*目标样式*/
+		/*width: 190px;*/
+		transform: scale(1.1);
+	}
+	</style>
+</head>
+<body>
+<img class="pic1" src="../img/course/01.jpg" alt="">	
+<img class="pic1" src="../img/course/02.jpg" alt="">	
+<img class="pic1" src="../img/course/03.jpg" alt="">	
+<img class="pic1" src="../img/course/04.jpg" alt="">
+
+<script>
+	//鼠标悬停存在某个图片上时，添加目标你class：big1//
+	//查找所有的.pic1元素通过一个css选择器选择满足该选择器的所有元素//
+	let list=document.querySelectorAll('.pic1')
+	//list就是上述方法返回的数组//
+	for(let i=0;i<list.length;i++){
+		let pic = list[i] //从数组中取第i个图片
+		//
+		//鼠标进入该图片。则添加。big1
+		pic.onmouseenter=()=>{
+			pic.classList.add('big1')
+		}
+		//鼠标离开该图片。则删除。big1
+		pic.onmouseleave=()=>{
+			pic.classList.remove('big1')
+		}
+	}
+</script>
+</body>
+</html>

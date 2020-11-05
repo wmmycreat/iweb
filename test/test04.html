@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="../css/font-awesome.css">
+		<title></title>
+		<style>
+			.fa {
+				/*变形：缩放，平移，扭曲，旋转*/
+				transform: rotateZ(60deg);
+				/*transform:scale(1.5);*/
+			}
+
+			.box {
+				/*渐变动画的基础class*/
+				width: 20px;
+				height: 20px;
+				background: #3f3;
+				transition: all .5s;
+			}
+
+			.big {
+				/*渐变动画的目标class*/
+				width: 200px;
+				height: 100px;
+				background: #a3a;
+			}
+
+			.state1 {
+				transform: rotate(0);
+				transition: all .5s;
+				/*针对变形的渐变动画*/
+			}
+
+			.state2 {
+				transform: rotate(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<h1>css1中的变形</h1>
+		<span class="fa  fa-caret-down fa-3x"></span>
+		<h1>css1中的动画</h1>
+		<div class="box" id="b2"></div>
+		<h1>css3中的变形动画</h1>
+		<span class="fa fa-heart fa-3x state1" id="h3"></span>
+
+		<script>
+			// DIV元素点击开始进行动画//
+			b2.onclick = () => {
+				console.log('点击率')
+				//js通过class的有和无操作元素的样式//
+				//b2.classlist.add('big')
+				//b2d class列表包含big这个class吗？//
+				if (b2.classList.contains('big')) {
+					b2.classList.remove('big')
+				} else {
+					b2.classList.add('big')
+				}
+			}
+			//鼠标悬停时添加//
+			h3.onmouseenter = () => {
+				h3.classList.add('state2')
+			}
+			//鼠标离开时删除//
+			h3.onmouseleave = () => {
+				h3.classList.remove('state2')
+			}
+		</script>
+	</body>
+</html>
