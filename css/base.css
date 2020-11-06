@@ -18,3 +18,12 @@ a{
 a:hover{
 	color: #f60;
 }
+ol,
+ul{
+     margin: 0;  /*清除浏览器为ul自动添加的样式*/
+			padding: 0;
+}
+li{
+	list-style: none;/*删除无序列表的提示符号*/
+			
+}

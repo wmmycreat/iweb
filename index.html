@@ -19,7 +19,7 @@
 			
 		}
 		.container{
-			width: 900px;
+			width: 1000px;
 			margin-left: auto;
 			margin-right: auto;
 			
@@ -70,18 +70,22 @@
 			margin-left: 2em;
 		}
 		
-		.cart{
+		.cart{/*购物车没有下拉菜单时的样式*/
 			width: 140px;
 			height: 33px;
 			line-height: 33px;
 			background-color: #F9F9F9;
 			border: 1px  solid  #ddd;
 		    cursor:pointer;/*修改光标样式*/
-			border-bottom: none;
 			position: relative;
 			z-index: 1;
-			
-			}
+		}
+		.cart.open{/*购物车有下拉菜单时的样式*/
+		
+		        line-height: 32px;
+		        background: #fff;
+		        border-bottom: none;
+		}
 			.cart>.fa{
 				padding-left: .6em;
 				padding-right: .6em;
@@ -103,26 +107,40 @@
 				/*简写padding: 2em 3em 2em 3em;*/
 				padding: 2em 3em;/*上和右 简写*/
 			    width: 262px;
+				display: none;/*不显示下拉菜单*/
+				}
 				
+				.cart-container>.dropdown.open{/*显示下拉菜单*/
+					display: block;
+				}
 				
-				
-			}
 		.navbar{
 			width: 100%;
-			height: 40px;
+			height: 42px;
 			line-height: 40px;
 			border-bottom: 2px solid #c1eebd;
 			background-color: #57BC4C;
+			color: #fff;
+			font-size: 1.2em;
 		}
-		.navbar>.container{
-			color:#fff;
+		.navbar.menu{
 			
+		}	
+		.navbar   .menu li{
+			float: left;
+			padding: 0 1.5em;/*=0 ,2.5, 0 ,2.5*/
 			
+		}
+		.navbar   .menu li:hover{
+			background: #4aaf3f;
+		}
+		.navbar   .menu li.a{/*使用复杂选择器有更高的优先级*/
+			color: #fff;
 		}
 	</style>
 	</head>
 	<body>
-		<!--顶部条-->
+		<!--1.顶部条-->
 		<div class="topbar">
 			<div class="container">
 				<a href="#">
@@ -143,56 +161,64 @@
 				</span>
 			</div>
 		</div>
+		
+		<!--2.搜索条-->
 		<div class="searchbar">
-			<!--搜索条-->
 			<div class="container">
 				<!--logo-->
 				<img src="img/logo.png" alt="iweb LOGO">
 				<!--购物车-->
-				<div class="cart-container"><!--Z-index-->
-				    <div class="cart" id="myCart"><!-- 悬停购物车里面的内容则只有小三角变化，注意触发的范围和反应的范围不一样 -->
-				        <span class="fa fa-shopping-cart"></span>
-				        <span>我的购物车(<b>0</b>)</span>	
+				<div class="cart-container" id="myCart">
+					<!--Z-index-->
+					<div class="cart" id="cart">
+						<!-- 悬停购物车里面的内容则只有小三角变化，注意触发的范围和反应的范围不一样 -->
+						<span class="fa fa-shopping-cart"></span>
+						<span>我的购物车(<b>0</b>)</span>
 						<!-- 加了两个class .一个是caret，另一个是caret-rotate-->
-				        <span class="fa fa-caret-down caret caret-rotate" id="caret"></span>
+						<span class="fa fa-caret-down caret caret-rotate" id="caret"></span>
 					</div>
-				         <!-- 下拉菜单-->
-				    <div class="dropdown">
-					请登录后查看您的菜单
-				    </div> 
+					<!-- 下拉菜单-->
+					<div class="dropdown" id="dropdown">
+						请登录后查看您的菜单
+					</div>
 				</div>
 				<div class="search">
 					<!--搜索-->
 					<input type="text" placeholder="课程搜索"><span class=" fa fa-search fa-lg"></span>
 				</div>
-				
-			</div>
-		</div>
-		<!--导航条-->
-		<div class="navbar">
-			<div class="container">
-				<span>
-                    <a href="#">首页</a>
-				</span>
-			
-				<a href="#">全部课程</a>
-				<a href="#">基本课程</a>
-				<a href="#">核心课程</a>
-				<a href="#">进阶课程</a>
-				<a href="#">名师堂</a>
-				<a href="#">校区</a>
+
 			</div>
 		</div>
 		
+		<!--3.导航条-->
+		<div class="navbar">
+			<div class="container">
+				<ul class="menu">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="course.html">全部课程</a></li>
+					<li><a href="course.html?tid=1">基本课程</a></li>
+					<li><a href="course.html?tid=1">核心课程</a></li>
+					<li><a href="course.html?tid=1">进阶课程</a></li>
+					<li><a href="teacher.html">名师堂</a></li>
+					<li><a href="school.html">校区</a></li>
+				</ul>
+					
+			</div>
+		</div>
+
 		<script>
 			//鼠标进入“我的购物车”小三角旋转，离开则转回来//
-		myCart.onmouseenter = () => {
-			caret.classList.add('caret-rotate')
-		}
-		//鼠标离开时删除//
-		myCart.onmouseleave = () => {
-			caret.classList.remove('caret-rotate')
-		}	
+			myCart.onmouseenter = () => {
+				caret.classList.add('caret-rotate')
+				cart.classList.add('open')
+				dropdown.classList.add('open')
+			}
+			//鼠标离开时删除//
+			myCart.onmouseleave = () => {
+				caret.classList.remove('caret-rotate')
+				cart.classList.remove('open')
+				dropdown.classList.remove('open')
+			}
 		</script>
 	</body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		/*选择器的优先级：
+		原则1：都是简单选择器的情况是，谁后出现他的优先级最高*/
+		
+		.c1{
+			color: red;
+		}
+		.c1.c2{/*复杂选择器，既有.从c1又有.c2*/
+			color: green;
+		}
+	
+	</style>
+</head>
+<body>
+	<h1>复杂css选择器</h1>
+	<div class="c1">AA</div>
+	<div class="c1 c2">BB</div>
+	<div class="c1 c2 c3">CC</div>
+</body>
+</html>
