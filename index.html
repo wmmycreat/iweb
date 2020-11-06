@@ -120,22 +120,76 @@
 			line-height: 40px;
 			border-bottom: 2px solid #c1eebd;
 			background-color: #57BC4C;
-			color: #fff;
 			font-size: 1.2em;
+			color: #fff;
 		}
-		.navbar.menu{
-			
-		}	
+	
 		.navbar   .menu li{
 			float: left;
 			padding: 0 1.5em;/*=0 ,2.5, 0 ,2.5*/
+			cursor:pointer ;
 			
 		}
 		.navbar   .menu li:hover{
 			background: #4aaf3f;
 		}
-		.navbar   .menu li.a{/*使用复杂选择器有更高的优先级*/
+		
+		.navbar   .menu li a,
+		.navbar   .menu2 li a{/*使用复杂选择器有更高的优先级*/
 			color: #fff;
+		}
+		.navbar   .menu2{
+			width: 140px;
+			background: #77C558;
+			float:right;
+			text-align: center;	
+		}
+		.navbar   .menu2 li a:hover{
+					color: #FFE699;
+		}
+	.image{
+		width: 100%;
+		height: 380px;
+		background-image: url(img/banner01.jpg);
+		background-repeat:no-repeat;
+		background-position:center;
+	}
+		 
+	.bar{
+		width: 100%;
+		height: 2px;
+		background: #ddd;
+		margin-top: 1px;
+	}
+	.main{
+		width: 100%;
+	}
+	.title{
+		
+		height:75px;
+		border-bottom: 2PX solid #ddd;
+		padding-left: 2em;
+		
+	}
+	   .title span{
+		font-size: 1.6em;
+		 font-weight: lighter;
+		 float: left;
+		line-height: 74px;
+		text-align: center;
+		 border-bottom:2px solid #57BC4C;
+	    }
+	   .title a{
+		   color: #999;
+		   font-size: 1.2em;
+		   padding-top:47px;
+		float: right;
+		}
+		.course>li{
+			margin:20px 40px 0 0;
+			 float: left;
+			
+			 
 		}
 	</style>
 	</head>
@@ -161,7 +215,7 @@
 				</span>
 			</div>
 		</div>
-		
+
 		<!--2.搜索条-->
 		<div class="searchbar">
 			<div class="container">
@@ -189,7 +243,7 @@
 
 			</div>
 		</div>
-		
+
 		<!--3.导航条-->
 		<div class="navbar">
 			<div class="container">
@@ -202,9 +256,62 @@
 					<li><a href="teacher.html">名师堂</a></li>
 					<li><a href="school.html">校区</a></li>
 				</ul>
-					
+				<ul class="menu2">
+					<li><a href="register.html">登录</a>
+						|
+						<a href="login.html">注册</a>
+					</li>
+				</ul>
 			</div>
 		</div>
+
+		<!--图片条-->
+
+		<div class="image">
+
+		</div>
+		<div class="bar"></div>
+
+		<!--主体部分-->
+		<div class="main">
+			<div class="container">
+				<div class="part1">
+					<div class="title">
+						<span>最新课程</span>
+						<a href="#">更多</a>
+					</div>
+					<ul class="course">
+						<li>
+							<a href="#">
+								<img src="img/course/01.jpg">
+							</a>
+							
+						</li>
+						<li>
+							<a href="">
+								<img src="img/course/02.jpg">
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/course/03.jpg">
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/course/04.jpg">
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<div class="part2"></div>
+				<div class="part3"></div>
+			</div>
+		</div>
+
+
+
 
 		<script>
 			//鼠标进入“我的购物车”小三角旋转，离开则转回来//
