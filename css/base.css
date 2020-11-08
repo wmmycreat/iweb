@@ -27,3 +27,6 @@ li{
 	list-style: none;/*删除无序列表的提示符号*/
 			
 }
+p{
+	margin: 0;
+}

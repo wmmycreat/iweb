@@ -157,39 +157,57 @@
 		 
 	.bar{
 		width: 100%;
-		height: 2px;
+		height: 3px;
 		background: #ddd;
-		margin-top: 1px;
+		
 	}
 	.main{
-		width: 100%;
+		
 	}
 	.title{
 		
-		height:75px;
+		height:42px;
 		border-bottom: 2PX solid #ddd;
-		padding-left: 2em;
+		
+		margin-top: 22px;
 		
 	}
 	   .title span{
-		font-size: 1.6em;
+		font-size: 18px;
 		 font-weight: lighter;
 		 float: left;
-		line-height: 74px;
-		text-align: center;
+		line-height: 40px;
+		padding-left:16px;
+		padding-right: 16px;
 		 border-bottom:2px solid #57BC4C;
+		
 	    }
 	   .title a{
 		   color: #999;
 		   font-size: 1.2em;
-		   padding-top:47px;
+		   padding-top:16px;
 		float: right;
 		}
 		.course>li{
-			margin:20px 40px 0 0;
-			 float: left;
+			margin:20px 30px 0 0;
+			 float: left;	 
+		}
+		.course>li:not(:last){
+			margin: 10px;
 			
-			 
+		}
+		.course  a:hover{
+			color: red;
+			
+		}
+		.course  .teacher{
+			font-size:10px;
+			color: #999;
+		}
+		.course  .rmb{
+			font-size: 17px;
+			font-weight: bold;
+			color:#f60;
 		}
 	</style>
 	</head>
@@ -285,22 +303,33 @@
 							<a href="#">
 								<img src="img/course/01.jpg">
 							</a>
-							
+							<p><a href="#" class="course-name">12-微信小程序开发</a></p>
+							<p class="teacher">讲师：程涛</p>
+							<p class="rmb">¥ 599.00</p>
 						</li>
 						<li>
 							<a href="">
 								<img src="img/course/02.jpg">
 							</a>
+							<p><a href="#" class="course-name">11-Unity地形搭建</a></p>
+							<p class="teacher">讲师：张东</p>
+							<p class="rmb">¥ 600.00</p>
 						</li>
 						<li>
 							<a href="#">
 								<img src="img/course/03.jpg">
 							</a>
+							<p><a href="#" class="course-name">10-UI控件之基础控制</a></p>
+							<p class="teacher">讲师：李然</p>
+							<p class="rmb">¥ 450.00</p>
 						</li>
 						<li>
 							<a href="#">
 								<img src="img/course/04.jpg">
 							</a>
+							<p><a href="#" class="course-name">9-微信小程序高级</a></p>
+							<p class="teacher">讲师：成亮</p>
+							<p class="rmb">¥ 200.00</p>
 						</li>
 					</ul>
 
